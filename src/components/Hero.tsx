@@ -91,7 +91,7 @@ export default function Hero() {
             {/* Profile Frame */}
             <div className="relative w-full h-full glass-card border-none p-4 shadow-2xl overflow-hidden rounded-[40px]">
               <img
-                src="public\Profile.JPG"
+                src="/Profile.JPG"
                 alt="Kenith Karas - Web Developer Profile"
                 className="w-full h-full object-cover rounded-[32px] brightness-90 contrast-110 group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
