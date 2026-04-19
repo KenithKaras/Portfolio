@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kenithkaras.com/sitemap.xml
