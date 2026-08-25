@@ -275,7 +275,7 @@ export default function Contact() {
             </button>
 
             {/* Screen readers announce state changes here. */}
-            <div aria-live="polite" className="min-h-[1.25rem] font-mono text-[12px]">
+            <div aria-live="polite" className="min-h-5 font-mono text-[12px]">
               {status === "sending" && <p className="text-syn-cmt">{"// sending…"}</p>}
               {status === "sent" && (
                 <p className="text-syn-str">{"// thanks — I'll get back to you soon"}</p>

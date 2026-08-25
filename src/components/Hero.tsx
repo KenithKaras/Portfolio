@@ -74,7 +74,6 @@ export default function Hero() {
             transition={t(0.55)}
             className="mt-7 max-w-xl text-[15px] leading-relaxed text-fg-mid sm:text-base"
           >
-<<<<<<< HEAD
             I build products solo — end to end, from database design to UI to deployment. Clean code,
             consistent shipping, and turning ideas into things people actually use.
           </m.p>
@@ -116,37 +115,6 @@ export default function Hero() {
               <a href={`mailto:${socials.email}`} aria-label="Email" className="p-1.5 text-fg-mid transition-colors hover:text-fg">
                 <Mail size={18} />
               </a>
-=======
-            {/* Background Glows */}
-            <div className="absolute inset-0 bg-accent-blue/20 blur-[100px] rounded-full animate-pulse" />
-            <div className="absolute -inset-4 border border-white/5 rounded-[40px] rotate-6" />
-            <div className="absolute -inset-4 border border-white/5 rounded-[40px] -rotate-3" />
-            {/* Profile Frame */}
-            <div className="relative w-full h-full glass-card border-none p-4 shadow-2xl overflow-hidden rounded-[40px]">
-              <img
-                src="/Profile.JPG"
-                alt="Kenith Karas - Web Developer Profile"
-                className="w-full h-full object-cover rounded-[32px] brightness-90 contrast-110 group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-                loading="eager"
-              />
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-navy/80 via-transparent to-transparent" />
-              {/* Badge */}
-              <motion.div
-                animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-8 left-8 right-8 glass-card p-4 flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center text-accent-blue">
-                  <div className="w-3 h-3 bg-red-500 rounded-full animate-ping" />
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm">Building AI Tools</p>
-                  <p className="text-slate-400 text-xs tracking-tighter">Diploma Student @ Web Development</p>
-                </div>
-              </motion.div>
->>>>>>> 6cd33fefb907a83d434eb2ad5f554f8a1c3b3be7
             </div>
           </m.div>
         </div>
@@ -156,7 +124,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: reduce ? 0 : 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduce ? { duration: 0 } : { duration: 0.7, ease: EASE, delay: 0.3 }}
-          className="mx-auto w-full max-w-[300px] lg:max-w-none"
+          className="mx-auto w-full max-w-75 lg:max-w-none"
         >
           <div className="group panel overflow-hidden">
             {/* macOS-style window chrome */}
