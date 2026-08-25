@@ -3,16 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kenith Karas | Web Developer Portfolio | React & AI Projects</title>
-    <meta name="description" content="Kenith Karas is a Diploma student and web developer specializing in React, modern web applications, and AI-based projects." />
-    <meta name="keywords" content="Kenith Karas, web developer portfolio, React developer, frontend developer, AI projects, JavaScript developer" />
+    <meta name="theme-color" content="#0B0E13" />
+
+    <title>Kenith Karas — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Kenith Karas is a full-stack developer in Mumbai who ships real products end to end — from database design to UI to deployment. React, TypeScript, and applied AI."
+    />
     <meta name="author" content="Kenith Karas" />
-    
+
+    <!-- Favicon (stops the /favicon.ico 404) -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Fonts: non-render-blocking. media="print" lets the page paint immediately
+         in fallback fonts, then swaps to the webfonts once they load. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Hero image preload — largest paint element -->
+    <link rel="preload" as="image" href="/profile.webp" type="image/webp" fetchpriority="high" />
+
     <!-- Open Graph -->
-    <meta property="og:title" content="Kenith Karas | Web Developer Portfolio" />
-    <meta property="og:description" content="Kenith Karas is a Diploma student and web developer specializing in React and AI projects." />
+    <meta property="og:title" content="Kenith Karas — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="A full-stack developer in Mumbai who ships real products end to end. React, TypeScript, and applied AI."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://picsum.photos/seed/portfolio/1200/630" />
+    <!-- replace with your absolute deployed URL before sharing, e.g. https://your-domain.com/Profile.JPG -->
+    <meta property="og:image" content="/Profile.JPG" />
   </head>
   <body>
     <div id="root"></div>

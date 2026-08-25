@@ -1,50 +1,60 @@
-import { motion, useScroll, useSpring } from 'framer-motion';
-import { useEffect } from 'react';
-import BackgroundAnimation from './components/BackgroundAnimation';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { LazyMotion, MotionConfig, domAnimation, m, useScroll, useSpring } from "framer-motion";
+import Backdrop from "./components/Backdrop";
+import Navbar from "./components/Navbar";
+import EditorGutter from "./components/EditorGutter";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 120,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
-  useEffect(() => {
-    // Smooth scroll polyfill or behavior
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, []);
-
   return (
-    <div className="relative min-h-screen">
-      <BackgroundAnimation />
-      
-      {/* Scroll progress bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-blue to-accent-purple z-[100] origin-left"
+    // LazyMotion + domAnimation loads only the DOM animation features this site
+    // uses, trimming framer-motion off the critical path. reducedMotion="user"
+    // makes every animation respect prefers-reduced-motion.
+    <LazyMotion features={domAnimation}>
+      <MotionConfig reducedMotion="user">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded focus:bg-syn-str focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-canvas"
+      >
+        Skip to content
+      </a>
+
+      <Backdrop />
+
+      <m.div
+        className="fixed left-0 right-0 top-0 z-[120] h-px origin-left bg-syn-str"
         style={{ scaleX }}
+        aria-hidden="true"
       />
 
       <Navbar />
+      <EditorGutter />
 
-      <main className="relative z-10">
+      <main id="main" className="relative z-10">
         <Hero />
         <About />
         <Experience />
         <Projects />
         <Skills />
+        <Certifications />
         <Contact />
       </main>
 
       <Footer />
-    </div>
+      </MotionConfig>
+    </LazyMotion>
   );
 }

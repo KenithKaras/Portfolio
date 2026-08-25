@@ -1,46 +1,46 @@
-import { Heart } from 'lucide-react';
+import { ArrowUp } from "lucide-react";
+import { navItems, socials } from "../lib/data";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
+  const links = navItems.filter((n) => n.id !== "home");
+
   return (
-    <footer className="py-12 relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-8">
-        <div className="flex flex-col items-center gap-4">
-           <a href="#" className="text-2xl font-display font-bold tracking-tighter">
-             K<span className="gradient-text">K.</span>
-           </a>
-           <p className="text-slate-500 text-sm max-w-md text-center">
-             Crafting modern digital architectures with a focus on impact, scalability, and polished user experiences.
-           </p>
-        </div>
-        <nav className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map(item => (
-                <a 
-                  key={item} 
-                  href={`#${item.toLowerCase()}`}
-                  className="text-xs uppercase tracking-widest font-bold text-slate-400 hover:text-white transition-colors"
-                >
-                    {item}
-                </a>
+    <footer className="relative border-t border-rule">
+      <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <a href="#home" className="font-mono text-sm font-bold tracking-tight">
+            <span className="text-fg">K</span>
+            <span className="text-syn-str">K</span>
+          </a>
+
+          <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2">
+            {links.map((l) => (
+              <a
+                key={l.id}
+                href={`#${l.id}`}
+                className="font-mono text-[12px] text-fg-mid transition-colors hover:text-syn-str"
+              >
+                {l.label.toLowerCase()}
+              </a>
             ))}
-        </nav>
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-        <div className="flex flex-col items-center gap-2">
-          <p className="text-slate-500 text-xs flex items-center gap-2">
-            © {currentYear} Kenith Karas. Built with <Heart size={14} className="text-red-500 fill-red-500" /> & React.
-          </p>
-          <div className="flex items-center gap-4 text-[10px] text-slate-600 font-bold uppercase tracking-widest">
-            <span>Clean Code</span>
-            <div className="w-1 h-1 rounded-full bg-slate-800" />
-            <span>SEO Optimized</span>
-            <div className="w-1 h-1 rounded-full bg-slate-800" />
-            <span>Responsive</span>
-          </div>
+          </nav>
+
+          <a
+            href="#home"
+            aria-label="Back to top"
+            className="flex h-8 w-8 items-center justify-center rounded border border-rule text-fg-mid transition-colors hover:border-syn-str hover:text-syn-str"
+          >
+            <ArrowUp size={14} />
+          </a>
         </div>
-      </div>
-      {/* Scroll to top decorative element */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1.5 bg-bg-navy border border-white/5 rounded-full flex items-center justify-center">
-         <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce" />
+
+        <div className="mt-8 flex flex-col gap-2 border-t border-rule pt-6 font-mono text-[11px] text-syn-cmt sm:flex-row sm:items-center sm:justify-between">
+          <p>{`// © ${year} Kenith Karas — built with React, TypeScript & Framer Motion`}</p>
+          <a href={`mailto:${socials.email}`} className="transition-colors hover:text-fg-mid">
+            {socials.email}
+          </a>
+        </div>
       </div>
     </footer>
   );
